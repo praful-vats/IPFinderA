@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %} IP Finder {% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+    <br>
+    <br>
+
+    <center>
+        <h1 style="font-family:'Courier New'">Django NSLookup</h1>
+    <br>
+    <br>
+
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+
+            <label>
+
+                <input type="text" class="form-control" name="search" placeholder="Enter website">
+
+            </label>
+
+
+        </div>
+        <input type="submit" class="btn btn-primary" value="Search">
+        <p></p>
+        <p>Click on the "Choose File" button to upload a file:</p>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+    </center>
+        </form>
+
+    </form>
+
+    <br>
+    <br>
+
+
+    <p>IP Address is : {{ip_address}}</p>
+
+
+</div>
+
+{%  endblock %}
