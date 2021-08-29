@@ -8,13 +8,14 @@
 
 
 <div class="container">
+
     <br>
     <br>
 
     <center>
         <h1 style="font-family:'Courier New'">Django NSLookup</h1>
-    <br>
-    <br>
+        <br>
+        <br>
 
     <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
@@ -24,10 +25,7 @@
             <label>
 
                 <input type="text" class="form-control" name="search" placeholder="Enter website">
-
             </label>
-
-
         </div>
         <input type="submit" class="btn btn-primary" value="Search">
         <p></p>
@@ -35,10 +33,9 @@
         <form action="/action_page.php">
             <input type="file" id="myFile" name="filename">
             <input type="submit">
-    </center>
         </form>
-
     </form>
+    </center>
 
     <br>
     <br>
