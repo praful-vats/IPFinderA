@@ -1,67 +1,302 @@
 {% extends 'base.html' %}
 
 
+
 {% block title %} IP Finder {% endblock %}
 
 
 {% block body %}
 
 
-<div class="container">
+{#< div class="container">#}
+{##}
+{#  <body style="background-image: url(C:\Users\A\Downloads\623055.jpg);"></body>#}
+{##}
+{##}
+{##}
+{#    <br>#}
+{#    <br>#}
+{##}
+{#    <Body background="https://i.ibb.co/s9y1c6P/wallpaper-mania-com-High-resolution-wallpaper-background-ID-77700012467.jpg">#}
+{#    <html>#}
+{#<head>#}
+<style>
+body {
+  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700008722.jpg");
+  background-repeat: no-repeat;
+  background-attachment: tailwind;
+  background-size: contain;
+}
+</style>
+{#</head>#}
+{#<html>#}
+{#<head>#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#<style>#}
+{#input:focus {#}
+{#  background-color: #ffffff;#}
+{#}#}
+{#</style>#}
+{#<style>#}
+{#            #leftbox {#}
+{#                float:left;#}
+{#                width:50%;#}
+{#                height:100%;#}
+{#            }#}
+{#            #rightbox {#}
+{#                float: right;#}
+{#                width: 50%;#}
+{#                height: 100%;#}
+{#            }#}
+{#body {font-family: Arial, Helvetica, sans-serif;}#}
+{#form {border: 3px solid #150909;}#}
+{##}
+{#input[type=text], input[type=password] {#}
+{#  width: 100%;#}
+{#  padding: 12px 20px;#}
+{#  margin: 8px 0;#}
+{#  display: inline-block;#}
+{#  border: 1px solid #ccc;#}
+{#  box-sizing: border-box;#}
+{#}#}
+{##}
+{#button {#}
+{#  background-color: #660241;#}
+{#  color: white;#}
+{#  padding: 14px 20px;#}
+{#  margin: 8px 0;#}
+{#  border: none;#}
+{#  cursor: pointer;#}
+{#  width: 100%;#}
+{#}#}
+{##}
+{#button:hover {#}
+{#  opacity: 0.8;#}
+{#}#}
+{##}
+{#.cancelbtn {#}
+{#  width: auto;#}
+{#  padding: 10px 18px;#}
+{#  background-color: #67005c;#}
+{#}#}
+{##}
+{#.imgcontainer {#}
+{#  text-align: center;#}
+{#  margin: 24px 0 12px 0;#}
+{#}#}
+{##}
+{#img.avatar {#}
+{#  width: 40%;#}
+{#  border-radius: 50%;#}
+{#}#}
+{##}
+{#.container {#}
+{#  padding: 16px;#}
+{#}#}
+{##}
+{#span.psw {#}
+{#  float: right;#}
+{#  padding-top: 16px;#}
+{#}#}
+{##}
+{#/* Change styles for span and cancel button on extra small screens */#}
+{#@media screen and (max-width: 300px) {#}
+{#    span.psw {#}
+{#        display: block;#}
+{#        float: none;#}
+{#    }#}
+{#}#}
+{#</style>#}
+{#</head>#}
+{#<body>#}
+{#<div id = "rightbox">#}
+{#<h2><b>User Registration</b></h2>#}
+{##}
+{#<form action="/action_page.php" method="post">#}
+{##}
+{##}
+{##}
+{#  <div class="container">#}
+{#    <label for="uname"><b>Email</b></label>#}
+{#    <input type="text" autocomplete="off" placeholder="Enter Email" name="uname" required>#}
+{##}
+{#    <label for="psw"><b>Password</b></label>#}
+{#    <input type="password" placeholder="Enter Password" name="psw" required>#}
+{##}
+{#    <label for="phone"><b>Phone No.</b></label>#}
+{#    <input type="text" autocomplete="off" placeholder="Enter Phone No." name="phone" required>#}
+{##}
+{##}
+{#      <button type="submit">Login</button>#}
+{##}
+{#  </div>#}
+{##}
+{##}
+{#</form>#}
+{#</div>#}
+{#</form>#}
+{##}
+{#</body>#}
+{#</html>#}
 
-    <br>
-    <br>
+<body>
+<style>
+    .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+</style>
+<style>
+body {
+  margin: 0;
+  font-family: "Courier New";
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.topnav a {
+  float: left;
+  color: lightgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #7f7f7f;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: black;
+  {#color: lightgrey;#}
+
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="accounts/register">Register</a>
+    <a href="accounts/login">Login</a>
 
 
-    <center>
-        <h1 style="font-family:'Courier New'">NSLookup</h1>
-        <br>
-        <br>
 
-    <form action="{% url 'index' %}" method="post">
+
+
+{#<button href="accounts/register" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>#}
+
+
+
+
+
+</div>
+<center>
+{#    <li> <a style="font-family:'Courier New';color:#7fd0ff"  href="accounts/register">Register</a></li>#}
+    <div class = "container">
+    <ul class="d-flex flex-row align-items-start justify-content-start">
+{#        <li class="active"><a href="index.html">Home </a></li>#}
+{#        <li> <a href="accounts/register">Register</a></li>#}
+
+    </ul>
+
+        <h1 style="font-family:'Courier New';color:#7fd0ff" >NSLookup</h1>
+<br><br>
+{#    <div action="{% url 'index' %}" method="post">#}
+        <form class="site-form" actions="/IPApp/index/" method="post">
+{#        <form action="index.html" method="post">#}
+
         {% csrf_token %}
 
         <div class="form-group">
 
             <label>
 
-                <input type="text" class="form-control" name="search" placeholder="Enter website">
+                <input type="text" class="form-control" name="search" placeholder="Enter website" autocomplete="off">
             </label>
-        </div>
+
         <input type="submit" class="btn btn-primary" value="Search">
-        <p></p>
-        <p>Click on the "Choose File" button to upload a file:</p>
-        <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename">
-            <input type="submit">
-            <a href = "#section2">file</a>
-        </form>
+{#            <a href="#section2">|↓|</a>#}
+
+        </div>
+    </div>
+    </div>
+</center>
+</div>
+{#        <div class="container py-5">#}
+{#            <h1>Register</h1>#}
+{#            <form method="POST">#}
+{#                {% csrf_token %}#}
+{#                {{ register_form|crispy }}#}
+{#                <button class="btn btn-primary" type="submit">Register</button>#}
+{#            </form>#}
+{#            <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>#}
+{#        </div>#}
+{#        <p>Click on the "Choose File" button to upload a file:</p>#}
+{#        <form action="/action_page.php">#}
+{#            <input type="file" id="myFile" name="filename">#}
+{#            <input type="submit">#}
+{#            <a href = "#section2">file</a>#}
+{#        </form>#}
     </form>
-    </center>
 
     <br>
     <br>
+    <br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+<br><br>
 
 
-    <p>IP Address is : {{ip_address}}</p>
-    <td>
+
+{#    <p>IP Address is : {{ip_address}}</p>#}
+
+<div>
+<td>
     </td>
     <style>
-</div>
-}
-<div class="main" id="section2">
 table {
-  font-family: arial, sans-serif;
+  font-family: "Courier New";
   border-collapse: collapse;
   width: 100%;
+{#<div class="main" id="section2">#}
+{#table {#}
+{#  font-family: arial, sans-serif;#}
+{#  border-collapse: collapse;#}
+{#  width: 100%;#}
 }
 
-td, th {
-  border: 1px solid #dddddd;
+th{
+  border: 1px solid #000000;
   text-align: center;
   padding: 8px;
 
 }
+td{
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 8px;
+    color: lightgrey;
+    background-color: #1b1b1b;
+
+}
+
 </style>
 <style>
 table.a{
@@ -74,26 +309,26 @@ html {
 #section2 {
   width: 100%;
 }
+tr:hover {background-color: #d9caca;}
 </style>
 
-</head>
-<body>
+<div>
 <div id="section2">
 <center>
 <table class = "a">
   <tr>
-    <th>ID</th>
-    <th>Location</th>
-    <th>IP Address(IPv4)</th>
-    <th>IP Address(IPv6)</th>
-    <th>Port 1</th>
-    <th>Port 2</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">ID</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Hostname</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv4)</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv6)</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Port 1</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Port 2</th>
   </tr>
   <tr>
     <td>1</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{ hostname }}</td>
+    <td>{{ ipv4 }}</td>
+    <td>{{ ipv6 }}</td>
     <td></td>
     <td></td>
   </tr>
@@ -137,7 +372,7 @@ html {
     <td></td>
     <td></td>
   </tr>
-    <tr>
+  <tr>
     <td>7</td>
     <td></td>
     <td></td>
@@ -193,27 +428,11 @@ html {
     <td></td>
     <td></td>
   </tr>
-    <tr>
-    <td>14</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>15</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+
 </table>
 </center>
-
 </div>
-
 </div>
-
+</div>
+</body>
 {%  endblock %}
