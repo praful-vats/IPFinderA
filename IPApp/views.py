@@ -185,6 +185,10 @@
 from django.shortcuts import render
 import dns
 import dns.resolver
+import requests
+import socket
+import sys
+from ipware import get_client_ip
 
 
 def index(request):
@@ -196,12 +200,55 @@ def index(request):
         ip_address = dns.resolver.Resolver()
         IPv4 = ip_address.resolve(search, 'A').rrset[0].to_text()
         IPv6 = ip_address.resolve(search, 'AAAA').rrset[0].to_text()
-        # answers = dns.resolver.Resolver.resolve(search, 'A').rrset[0].to_text()
-        # ip = {"ip_address": answers}
-        # host = {"hostname": search}
+        # r = request.head(search)
+        # r.status_code == 200
+        # down = r.status_code
+        # ip = request.session.get('ip', 0)
+        # url = search
+        # hash = url.split('/')[5]
+        # ip. is_routable = get_client_ip(request)
+        # if ip is None:
+        #     ip = '0.0.0.0'
+        # else:
+        #     if is_routable:
+        #         ipv = "Public"
+        #     else:
+        #         ipv = "Private"
+        # ipi = ip.ipv
+
         return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search})
     else:
         return render(request, 'index.html')
+        # port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # for port in range(1, 1025):
+        #     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #     sock.settimeout(1)
+        #     result = sock.connect_ex((search, port))
+        #     if 0 == result:
+        #         port1 = format(port)
+        #     sock.close()
+
+
+# def get_client_ip(request):
+#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#     if x_forwarded_for:
+#         ip = x_forwarded_for.split(',')[0]
+#     else:
+#         ip = request.META.get('REMOTE_ADDR')
+#     ipi = ip
+#     return render(request, 'index.html', {"ip": ipi})
+
+
+
+
+
+        # s.connect(search)
+        # answers = dns.resolver.Resolver.resolve(search, 'A').rrset[0].to_text()
+        # ip = {"ip_address": answers}
+        # host = {"hostname": search}
+    #     return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search})
+    # else:
+    #     return render(request, 'index.html')
 
 
 # from django.shortcuts import render
@@ -218,3 +265,41 @@ def index(request):
 #     # ip = {"ip_address": answers}
 #     # host = {"hostname": search}
 #     return render(request, 'index.html', {"ip_address": answers, "hostname": search})
+
+# -*- coding: utf-8 -*-
+# from django.shortcuts import render_to_response
+# from django.template import RequestContext
+# from django.http import HttpResponseRedirect
+# from django.core.urlresolvers import reverse
+#
+# from myproject.myapp.models import Document
+# from myproject.myapp.forms import DocumentForm
+#
+# def list(request):
+#     # Handle file upload
+#     if request.method == 'POST':
+#         form = DocumentForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             newdoc = Document(docfile = request.FILES['docfile'])
+#             newdoc.save()
+#
+#             # Redirect to the document list after POST
+#             return HttpResponseRedirect(reverse('myapp.views.list'))
+#     else:
+#         form = DocumentForm() # A empty, unbound form
+#
+#     # Load documents for the list page
+#     documents = Document.objects.all()
+#
+#     # Render list page with the documents and the form
+#     return render_to_response(
+#         'myapp/list.html',
+#         {'documents': documents, 'form': form},
+#         context_instance=RequestContext(request)
+#     )
+
+
+
+
+
+

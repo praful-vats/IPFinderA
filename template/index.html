@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 
-
 {% block title %} IP Finder {% endblock %}
 
 
@@ -19,7 +18,7 @@
 {##}
 {#    <Body background="https://i.ibb.co/s9y1c6P/wallpaper-mania-com-High-resolution-wallpaper-background-ID-77700012467.jpg">#}
 {#    <html>#}
-{#<head>#}
+<head>
 <style>
 body {
   background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700008722.jpg");
@@ -28,7 +27,7 @@ body {
   background-size: contain;
 }
 </style>
-{#</head>#}
+</head>
 {#<html>#}
 {#<head>#}
 {#<meta name="viewport" content="width=device-width, initial-scale=1">#}
@@ -180,6 +179,8 @@ body {
 }
 </style>
 </head>
+{#<meta http-equiv="refresh" content="900">#}
+
 <body>
 
 <div class="topnav">
@@ -188,7 +189,24 @@ body {
     <a href="accounts/login">Login</a>
 
 
+<style>
 
+
+/* Create two equal columns that floats next to each other */
+.container {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 
 
 {#<button href="accounts/register" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>#}
@@ -198,17 +216,18 @@ body {
 
 
 </div>
-<center>
+
 {#    <li> <a style="font-family:'Courier New';color:#7fd0ff"  href="accounts/register">Register</a></li>#}
-    <div class = "container">
+    <div class = "container" >
+{#        <div class="row">#}
     <ul class="d-flex flex-row align-items-start justify-content-start">
 {#        <li class="active"><a href="index.html">Home </a></li>#}
 {#        <li> <a href="accounts/register">Register</a></li>#}
 
     </ul>
+        <br><br>
 
         <h1 style="font-family:'Courier New';color:#7fd0ff" >NSLookup</h1>
-<br><br>
 {#    <div action="{% url 'index' %}" method="post">#}
         <form class="site-form" actions="/IPApp/index/" method="post">
 {#        <form action="index.html" method="post">#}
@@ -219,16 +238,49 @@ body {
 
             <label>
 
-                <input type="text" class="form-control" name="search" placeholder="Enter website" autocomplete="off">
+                <input type="text" class="form-control" id="service" name="search" placeholder="Enter website" autocomplete="off">
             </label>
 
-        <input type="submit" class="btn btn-primary" value="Search">
+        <input type="submit" class="btn btn-primary" value="Search" id="hostname" data-href-template="#section2">
+
+
+
+    <div align="right">
+            <style>
+
+                #rcorners2 {
+  border-radius: 5px;
+  border: solid #7fd0ff;
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+}
+            </style>
+
+<h id="rcorners2"></h>
+        <p id="rcorners2" style="color:white;text-align: left">Your IP:{{ ipa }}</p>
+
+
+
+
+
+
 {#            <a href="#section2">|↓|</a>#}
+{#            <button type="button"#}
+{#        id="updateButton"#}
+{#        class="btn btn-primary"#}
+{#                    href="#section2"#}
+{#        onclick="productUpdate();">Search</button>#}
+
+
+
+
+
 
         </div>
     </div>
     </div>
-</center>
+
 </div>
 {#        <div class="container py-5">#}
 {#            <h1>Register</h1>#}
@@ -240,12 +292,30 @@ body {
 {#            <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>#}
 {#        </div>#}
 {#        <p>Click on the "Choose File" button to upload a file:</p>#}
-{#        <form action="/action_page.php">#}
-{#            <input type="file" id="myFile" name="filename">#}
-{#            <input type="submit">#}
-{#            <a href = "#section2">file</a>#}
-{#        </form>#}
-    </form>
+
+        <form enctype = "multipart/form-data" action = "upload/views.py" method = "post">
+            {% csrf_token %}
+   <p><input type = "file" name = "filename" /></p>
+   <p><input type = "submit" value = "Upload" /></p>
+        </form>
+{#<script>#}
+{#    const form = document.querySelector('form');#}
+{#    const tbody = document.querySelector('tbody');#}
+{#    const table = document.querySelector("table");#}
+{#    function onAddhostname(e){#}
+{#        e.preventDefault();#}
+{#        const hostname = document.getElementID('hostname').value;#}
+{#        tbodyEl.innerHTML += `#}
+{#            <tr>#}
+{#                <td>${{ hostname }}</td>#}
+{#            </tr>#}
+{#        `;#}
+{##}
+{#    }#}
+{#    form.addEventListener('submit', onAddhostname);#}
+{##}
+{#</script>#}
+
 
     <br>
     <br>
@@ -267,6 +337,25 @@ body {
 
 {#    <p>IP Address is : {{ip_address}}</p>#}
 
+
+
+
+
+
+
+{#table#}
+
+
+
+
+
+
+
+
+
+
+
+
 <div>
 <td>
     </td>
@@ -275,11 +364,11 @@ table {
   font-family: "Courier New";
   border-collapse: collapse;
   width: 100%;
-{#<div class="main" id="section2">#}
-{#table {#}
-{#  font-family: arial, sans-serif;#}
-{#  border-collapse: collapse;#}
-{#  width: 100%;#}
+<div class="main" id="section2">
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 th{
@@ -321,9 +410,11 @@ tr:hover {background-color: #d9caca;}
     <th bgcolor="#121212"><font color="#a9a9a9">Hostname</th>
     <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv4)</th>
     <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv6)</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Port 1</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Port 2</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Website Down</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Last Down</th>
   </tr>
+
+
   <tr>
     <td>1</td>
     <td>{{ hostname }}</td>
@@ -332,104 +423,79 @@ tr:hover {background-color: #d9caca;}
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td>2</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>8</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>9</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>10</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>11</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>12</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td>13</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
 
 </table>
+
+
+
+{#<head>#}
+{##}
+{#    <link href="index.css">#}
+{#    <script src="javascript.js"></script>#}
+{##}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{##}
+{#    <div class='bookshelf-wrapper'>#}
+{#      <table class='table' id='table'>#}
+{#        <tr class='row'>#}
+{#          <th class='th'>ID</th>#}
+{#          <th class='th'>Hostname</th>#}
+{#          <th class='th'>IPv4</th>#}
+{#          <th class='th'>IPv6</th>#}
+{##}
+{#        </tr>#}
+{##}
+{#<!--         <tr class='row'>#}
+{#          <td class='cell'>Murder on the Orient Express</td>#}
+{#          <td class='cell'>Agatha Christie</td>#}
+{#          <td class='cell'>Read</td>#}
+{#          <td class='cell'></td>#}
+{#        </tr> -->#}
+{#      </table>#}
+{#    </div>#}
+{##}
+{#    <div class='new-btn-wrapper'>#}
+{#      <button type='button' id='new-book-btn' class='new-book-btn'>New Row</button>#}
+{#    </div>#}
+{##}
+{#    <form class='form' id='form' style='display: none'>#}
+{#      <label for='title-form' class='title-label'>ID</label>#}
+{#      <input id='title-form' type='text' name='title'>#}
+{#      <br>#}
+{#      <label for='author-form' class='author-label'>Hostname</label>#}
+{#      <input id='author-form' type='text' name='title'><br>#}
+{##}
+{##}
+{##}
+{#      <br>#}
+{##}
+{#      <button id='submit-btn' class='submit-btn' type='button'>Submit</button>#}
+{#    </form>#}
+{##}
+{#  </div>#}
+{##}
+{##}
+{#</body>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
 </center>
 </div>
 </div>

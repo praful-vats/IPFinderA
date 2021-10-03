@@ -71,23 +71,24 @@ span.psw {
 <h2><b>User Registration</b></h2>
 </center>
 <form class="site-form" actions="/accounts/register/" method="post">
+{#<form action="register" method="post">#}
     {% csrf_token %}
 
   <div class="container">
-    <label for="uname"><b>Name</b></label>
-    <input type="text" autocomplete="off" placeholder="Enter Name" name="uname" required>
+    <label for="username"><b>Name</b></label>
+    <input type="text" autocomplete="off" placeholder="Enter Name" name="username" required>
 
-    <label for="uname"><b>Email</b></label>
-    <input type="text" autocomplete="off" placeholder="Enter Email" >
+    <label for="email"><b>Email</b></label>
+    <input type="text" autocomplete="off" placeholder="Enter Email" name="email" required>
 
-    <label for="uname"><b>Phone No.</b></label>
-    <input type="text" autocomplete="off" placeholder="Enter Phone No." name="uname" >
+{#    <label for="phone"><b>Phone No.</b></label>#}
+{#    <input type="text" autocomplete="off" placeholder="Enter Phone No." name="phone" required>#}
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" autocomplete="off" placeholder="Enter Password" name="psw" required>
+    <label for="psw1"><b>Password</b></label>
+    <input type="password" autocomplete="off" placeholder="Enter Password" name="password" required>
 
-    <label for="psw"><b>Confirm Password</b></label>
-    <input type="password" autocomplete="off" placeholder="Enter Password" name="psw" required>
+{#    <label for="psw2"><b>Confirm Password</b></label>#}
+{#    <input type="text" autocomplete="off" placeholder="Enter Password" name="psw2" required>#}
 
 
       <button type="submit">Login</button>
@@ -101,6 +102,11 @@ span.psw {
 </body>
 </body>
 </html>
+
+
+
+
+
 
 
 {#<!DOCTYPE html>#}
@@ -281,3 +287,9 @@ span.psw {
 {##}
 {#</body>#}
 {#</html>#}
+
+
+
+
+
+

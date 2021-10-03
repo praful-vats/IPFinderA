@@ -1,0 +1,116 @@
+html {
+  min-height: 100%;
+}
+
+.content-wrapper {
+  font-family: Helvetica, sans-serif;
+  color: #333;
+}
+
+.heading {
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  font-size: 3em;
+  letter-spacing: 0.5px;
+  font-family: Georgia, serif;
+}
+
+.bookshelf-wrapper {
+  margin: 0 auto;
+}
+
+.table {
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  border-spacing: 0;
+}
+
+.th {
+  font-weight: bold;
+  text-align: left;
+  min-width: 70px;
+  padding: 10px;
+  color: #333;
+  background-color: #DCD5C6;
+  letter-spacing: 0.5px;
+}
+
+.cell {
+  padding: 15px;
+}
+
+
+.new-btn-wrapper {
+  margin: 35px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+.new-book-btn {
+  width: 130px;
+  background-color: #f2eee6;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.2em;
+  font-family: Georgia, serif;
+}
+
+.del-btn-wrapper {
+  width: 100px;
+  margin: 20px auto;
+}
+.remove-btn {
+  width: 100px;
+  padding: 8px;
+  font-size: 1em;
+  color: #be1616;
+  background-color:#fafafa;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+
+}
+
+.form {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+.form input {
+  margin: 10px;
+}
+
+.form input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  font-size: 0.9em;
+}
+.form label:first-child {
+ margin-left: 33px;
+}
+
+
+.submit-btn {
+  width: 100px;
+  margin-top: 20px;
+  background-color: #f2eee6;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  font-family: Georgia, serif;
+}
+
+.row {
+  background-color: #f4f4f4;
+}
+.row:nth-child(odd) {
+  background-color: #f2eee6;
+}
+
+input[type='radio'] {
+  margin-left: 2px;
+}
+
+label {
+  margin-left: 15px;
+}
