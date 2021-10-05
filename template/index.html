@@ -258,7 +258,7 @@ body {
             </style>
 
 <h id="rcorners2"></h>
-        <p id="rcorners2" style="color:white;text-align: left">Your IP:{{ ipa }}</p>
+        <p id="rcorners2" style="color:white;text-align: left">Your IP: 127.0.0.1:8000</p>
 
 
 
@@ -295,7 +295,7 @@ body {
 
         <form enctype = "multipart/form-data" action = "upload/views.py" method = "post">
             {% csrf_token %}
-   <p><input type = "file" name = "filename" /></p>
+   <p><input type = "file" name = "myFile" /></p>
    <p><input type = "submit" value = "Upload" /></p>
         </form>
 {#<script>#}
@@ -317,10 +317,9 @@ body {
 {#</script>#}
 
 
+
+
     <br>
-    <br>
-    <br>
-    <br><br>
     <br><br>
     <br><br>
     <br><br>
@@ -365,11 +364,11 @@ table {
   border-collapse: collapse;
   width: 100%;
 <div class="main" id="section2">
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+{#table {#}
+{#  font-family: arial, sans-serif;#}
+{#  border-collapse: collapse;#}
+{#  width: 100%;#}
+{#}#}
 
 th{
   border: 1px solid #000000;
@@ -403,26 +402,26 @@ tr:hover {background-color: #d9caca;}
 
 <div>
 <div id="section2">
-<center>
+
 <table class = "a">
   <tr>
     <th bgcolor="#121212"><font color="#a9a9a9">ID</th>
     <th bgcolor="#121212"><font color="#a9a9a9">Hostname</th>
     <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv4)</th>
     <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv6)</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Website Down</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Last Down</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Hash value</th>
+    <th bgcolor="#121212"><font color="#a9a9a9">Down</th>
   </tr>
-
-
+    <tbody>
   <tr>
     <td>1</td>
     <td>{{ hostname }}</td>
     <td>{{ ipv4 }}</td>
     <td>{{ ipv6 }}</td>
-    <td></td>
-    <td></td>
+    <td>{{ hash }}</td>
+    <td>{{ down }}</td>
   </tr>
+    </tbody>
 
 </table>
 
@@ -493,10 +492,6 @@ tr:hover {background-color: #d9caca;}
 
 
 </body>
-
-
-
-</center>
 </div>
 </div>
 </div>

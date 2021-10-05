@@ -215,8 +215,13 @@ def index(request):
         #     else:
         #         ipv = "Private"
         # ipi = ip.ipv
+        url = "https://"+search
+        page = requests.get(url)
+        pagi = page.status_code
 
-        return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search})
+        hashi = hash(search)
+
+        return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search, "hash": hashi, "down": pagi})
     else:
         return render(request, 'index.html')
         # port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
