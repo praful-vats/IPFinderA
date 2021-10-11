@@ -59,7 +59,7 @@ def login(request):
             auth.login(request, user)
             return redirect("")
         else:
-            return redirect('login')
+            return redirect('/upload/filo/')
 
     else:
         return render(request, 'login.html')

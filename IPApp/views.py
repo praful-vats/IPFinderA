@@ -218,10 +218,16 @@ def index(request):
         url = "https://"+search
         page = requests.get(url)
         pagi = page.status_code
+        if (pagi == 200):
+            hass = 'UP'
+        else:
+            hass = 'Down'
 
         hashi = hash(search)
 
-        return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search, "hash": hashi, "down": pagi})
+
+
+        return render(request, 'index.html', {"ipv4": IPv4, "ipv6": IPv6, "hostname": search, "hash": hashi, "down": hass})
     else:
         return render(request, 'index.html')
         # port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

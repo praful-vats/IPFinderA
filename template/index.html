@@ -19,14 +19,14 @@
 {#    <Body background="https://i.ibb.co/s9y1c6P/wallpaper-mania-com-High-resolution-wallpaper-background-ID-77700012467.jpg">#}
 {#    <html>#}
 <head>
-<style>
-body {
-  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700008722.jpg");
-  background-repeat: no-repeat;
-  background-attachment: tailwind;
-  background-size: contain;
-}
-</style>
+{#<style>#}
+{#body {#}
+{#  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700008722.jpg");#}
+{#  background-repeat: no-repeat;#}
+{#  background-attachment: tailwind;#}
+{#  background-size: contain;#}
+{#}#}
+{#</style>#}
 </head>
 {#<html>#}
 {#<head>#}
@@ -187,6 +187,7 @@ body {
   <a class="active" href="#home">Home</a>
   <a href="accounts/register">Register</a>
     <a href="accounts/login">Login</a>
+    <a href="upload/filo">Upload</a>
 
 
 <style>
@@ -225,9 +226,8 @@ body {
 {#        <li> <a href="accounts/register">Register</a></li>#}
 
     </ul>
-        <br><br>
 
-        <h1 style="font-family:'Courier New';color:#7fd0ff" >NSLookup</h1>
+        <h1 style="font-family:'Courier New';color:black" >NSLookup</h1>
 {#    <div action="{% url 'index' %}" method="post">#}
         <form class="site-form" actions="/IPApp/index/" method="post">
 {#        <form action="index.html" method="post">#}
@@ -241,7 +241,7 @@ body {
                 <input type="text" class="form-control" id="service" name="search" placeholder="Enter website" autocomplete="off">
             </label>
 
-        <input type="submit" class="btn btn-primary" value="Search" id="hostname" data-href-template="#section2">
+        <input type="submit"  class="btn btn-primary" value="Search" id="hostname" data-href-template="#section2">
 
 
 
@@ -253,12 +253,15 @@ body {
   border: solid #7fd0ff;
   padding: 20px;
   width: 500px;
-  height: 300px;
+  height: 310px;
 }
             </style>
 
-<h id="rcorners2"></h>
-        <p id="rcorners2" style="color:white;text-align: left">Your IP: 127.0.0.1:8000</p>
+{#<h id="rcorners2"></h>#}
+        <p id="rcorners2" style="color:black;text-align: left">Your IP: {{ ipa }}<br><br>
+        hostname: {{ hostname }}<br><br>IPv4: {{ ipv4 }}<br><br>IPv6: {{ ipv6 }}<br><br>hash: {{ hash }}<br><br>Down: {{ down }}</p>
+
+
 
 
 
@@ -293,11 +296,11 @@ body {
 {#        </div>#}
 {#        <p>Click on the "Choose File" button to upload a file:</p>#}
 
-        <form enctype = "multipart/form-data" action = "upload/views.py" method = "post">
-            {% csrf_token %}
-   <p><input type = "file" name = "myFile" /></p>
-   <p><input type = "submit" value = "Upload" /></p>
-        </form>
+{#        <form enctype = "multipart/form-data" action = "upload/views.py" method = "post">#}
+{#            {% csrf_token %}#}
+{#   <p><input type = "file" name = "myFile" /></p>#}
+{#   <p><input type = "submit" value = "Upload" /></p>#}
+{#        </form>#}
 {#<script>#}
 {#    const form = document.querySelector('form');#}
 {#    const tbody = document.querySelector('tbody');#}
@@ -319,18 +322,19 @@ body {
 
 
 
-    <br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-<br><br>
+{#    <br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#<br><br>#}
+{#<br><br>#}
 
 
 
@@ -358,72 +362,72 @@ body {
 <div>
 <td>
     </td>
-    <style>
-table {
-  font-family: "Courier New";
-  border-collapse: collapse;
-  width: 100%;
-<div class="main" id="section2">
+{#    <style>#}
+{#table {#}
+{#  font-family: "Courier New";#}
+{#  border-collapse: collapse;#}
+{#  width: 100%;#}
+{#<div class="main" id="section2">#}
 {#table {#}
 {#  font-family: arial, sans-serif;#}
 {#  border-collapse: collapse;#}
 {#  width: 100%;#}
 {#}#}
-
-th{
-  border: 1px solid #000000;
-  text-align: center;
-  padding: 8px;
-
-}
-td{
-    border: 1px solid #000000;
-    text-align: center;
-    padding: 8px;
-    color: lightgrey;
-    background-color: #1b1b1b;
-
-}
-
-</style>
-<style>
-table.a{
-  table-layout: fixed;
-  width: 100%;
-}
-html {
-  scroll-behavior: smooth;
-}
-#section2 {
-  width: 100%;
-}
-tr:hover {background-color: #d9caca;}
-</style>
-
-<div>
-<div id="section2">
-
-<table class = "a">
-  <tr>
-    <th bgcolor="#121212"><font color="#a9a9a9">ID</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Hostname</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv4)</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv6)</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Hash value</th>
-    <th bgcolor="#121212"><font color="#a9a9a9">Down</th>
-  </tr>
-    <tbody>
-  <tr>
-    <td>1</td>
-    <td>{{ hostname }}</td>
-    <td>{{ ipv4 }}</td>
-    <td>{{ ipv6 }}</td>
-    <td>{{ hash }}</td>
-    <td>{{ down }}</td>
-  </tr>
-    </tbody>
-
-</table>
+{##}
+{#th{#}
+{#  border: 1px solid #000000;#}
+{#  text-align: center;#}
+{#  padding: 8px;#}
+{##}
+{#}#}
+{#td{#}
+{#    border: 1px solid #000000;#}
+{#    text-align: center;#}
+{#    padding: 8px;#}
+{#    color: lightgrey;#}
+{#    background-color: #1b1b1b;#}
+{##}
+{#}#}
+{##}
+{#</style>#}
+{#<style>#}
+{#table.a{#}
+{#  table-layout: fixed;#}
+{#  width: 100%;#}
+{#}#}
+{#html {#}
+{#  scroll-behavior: smooth;#}
+{#}#}
+{##section2 {#}
+{#  width: 100%;#}
+{#}#}
+{#tr:hover {background-color: #d9caca;}#}
+{#</style>#}
+{##}
+{#<div>#}
+{#<div id="section2">#}
+{##}
+{#<table class = "a">#}
+{#  <tr>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">ID</th>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">Hostname</th>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv4)</th>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">IP Address(IPv6)</th>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">Hash value</th>#}
+{#    <th bgcolor="#121212"><font color="#a9a9a9">Down</th>#}
+{#  </tr>#}
+{#    <tbody>#}
+{#  <tr>#}
+{#    <td>1</td>#}
+{#    <td>{{ hostname }}</td>#}
+{#    <td>{{ ipv4 }}</td>#}
+{#    <td>{{ ipv6 }}</td>#}
+{#    <td>{{ hash }}</td>#}
+{#    <td>{{ down }}</td>#}
+{#  </tr>#}
+{#    </tbody>#}
+{##}
+{#</table>#}
 
 
 

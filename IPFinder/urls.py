@@ -27,7 +27,8 @@ urlpatterns = [
     path('', include('IPApp.urls')),
     path('accounts/', include('accounts.urls')),
     path('ipad/', include('ipad.urls')),
-    path('upload/', include('upload.urls', namespace='upload')),
+    # path('upload/', include('upload.urls')),
+    # path('csvup/', include('csvup.urls'))
 
 
     # path('', include('IPApp.urls')),

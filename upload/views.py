@@ -1,16 +1,26 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 import pandas as pd
 # from .models import FilesUpload
+from dns import ipv4
+from dns import ipv6
+from IPApp import
 
 
-def upload_file_view(request):
+def filo(request):
     if request.method == "POST":
         file = request.FILES["myFile"]
         csv = pd.read_csv(file)
-        print(csv.head())
+        df1 = csv["hostnames"]
+        df1.index = pd.DataFrame({"IPv4": {{ipv4}}
+                                  {"IPv6": {{ ipv6 }}}
+                                      {"hash": {{ hashi }}}
 
-        return HttpResponse("Saved")
-    return render(request, "index.html")
+
+                                  })
+        return redirect('/upload/uplo/')
+        # return HttpResponse("Saved")
+    else:
+        return render(request, 'uplo.html')
 
 
 

@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class UploadConfig(AppConfig):
+class CsvupConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'upload'
-
+    name = 'csvup'

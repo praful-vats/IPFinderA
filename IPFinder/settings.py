@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'IPApp',
     'accounts',
     'ipad',
-    'upload',
+    # 'upload',
+    # 'csvup',
     # 'crispy_forms'
     # 'records',
 ]
